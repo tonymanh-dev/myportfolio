@@ -1,0 +1,22 @@
+.app {
+    max-width: 1300px;
+}
+.container {
+    padding: 0 14rem;
+    counter-reset: section;
+
+    //lg
+    @media screen and (max-width: 900px) {
+        padding: 0 10rem;
+    }
+
+    //md
+    @media screen and (max-width: 768px) {
+        padding: 0 6rem;
+    }
+
+    // sm
+    @media screen and (max-width: 600px) {
+        padding: 0 2.4rem;
+    }
+}

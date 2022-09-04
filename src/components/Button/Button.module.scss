@@ -1,0 +1,106 @@
+.wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-family);
+    font-size: 1.6rem;
+    font-weight: 600;
+    min-width: 100px;
+    padding: 10px 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid transparent;
+    user-select: none;
+
+    transition: all 0.5s ease-out;
+    &:hover {
+        scale: 0.9;
+        transition: ease-out 0.2ms;
+        .icon {
+            animation: 0.6s linear 1s infinite alternate slidein;
+        }
+        @keyframes slidein {
+            from {
+                transform: translateX(0%);
+            }
+
+            to {
+                transform: translateX(100%);
+            }
+        }
+    }
+
+    span {
+        display: flex;
+    }
+
+    + .wrapper {
+        margin-left: 8px;
+    }
+
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.3;
+    }
+}
+
+.icon + .title,
+.title + .icon {
+    margin-left: 1.6rem;
+}
+.icon {
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+    // animation: 0.8s linear 1s infinite alternate slidein;
+}
+// @keyframes slidein {
+//     from {
+//         transform: translateX(0%);
+//     }
+
+//     to {
+//         transform: translateX(100%);
+//     }
+// }
+
+// Button types
+.primary {
+    color: var(--white-color);
+    background: var(--primary-color);
+
+    &:hover {
+        background: #2563eb;
+    }
+}
+
+.outline {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+
+    &:hover {
+        transition: ease-out 300ms;
+        color: var(--white-color);
+        background: var(--primary-color);
+    }
+}
+
+.text {
+    color: var(--primary-color);
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// Button sizes
+.small {
+    min-width: 88px;
+    padding: 8px 12px;
+}
+
+.large {
+    min-width: 156px;
+    padding: 14px 16px;
+}

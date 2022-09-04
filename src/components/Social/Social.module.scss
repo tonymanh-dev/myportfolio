@@ -1,0 +1,44 @@
+.app__social {
+    position: fixed;
+    left: 3rem;
+    right: auto;
+    bottom: 0;
+
+    .social__list {
+        width: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        list-style: none;
+
+        .item {
+            padding: 0.4rem;
+            line-height: 0.5;
+            cursor: pointer;
+
+            svg {
+                font-size: 2.2rem;
+            }
+            .label {
+                color: var(--text-secondary);
+                transition: ease-out 200ms;
+            }
+        }
+        .item:hover {
+            .label {
+                color: var(--primary-color);
+            }
+        }
+    }
+    .social__list::after {
+        content: '';
+        height: 10rem;
+        margin-top: 1.6rem;
+        border-left: 1px solid var(--text-secondary);
+    }
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}

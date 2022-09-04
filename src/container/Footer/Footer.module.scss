@@ -1,0 +1,25 @@
+.wrapper {
+    display: block;
+    text-align: center;
+    margin-bottom: 5rem;
+    p {
+        font-size: 1.4rem;
+        color: var(--text-secondary);
+        a {
+            font-weight: 600;
+            &:hover {
+                color: var(--primary-color);
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.wrapper::before {
+    content: '';
+    padding-top: 5rem;
+    display: block;
+    text-align: center;
+    border-top: var(--heading-divider);
+    // width: 50%;
+}

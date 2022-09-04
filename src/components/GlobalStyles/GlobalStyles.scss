@@ -1,0 +1,153 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap'); */
+
+@import 'normalize.css';
+
+:root {
+    // Dark mode color palette
+    //
+    --primary-color: #0ea5e9;
+    // --primary-color: #3b82f6;
+    --secondary-color: #2563eb;
+
+    // Background color
+    --bg-primary: #15202b;
+    --bg-secondary: #273340;
+
+    --bg-blur: rgba(21, 32, 43, 0.3);
+
+    // Text colors
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+
+    // Fixed colors
+    //
+    --black-color: #121212;
+    --gray-color: #404040;
+    --white-color: #ffff;
+
+    --shadow-1: 0px 0px 6px rgba(255, 255, 255, 0.15);
+    --shadow-2: 8px 8px 8px 0px rgba(0, 0, 0, 0.3);
+
+    --heading-divider: 1px solid rgba(255, 255, 255, 0.09);
+
+    // Border radius
+    // --img-radius: 6px;
+    --border-4: 4px;
+    --border-6: 8px;
+    --rounded: 50px;
+
+    // Font
+    --font-family: 'ProximaNova', sans-serif;
+
+    // Font size
+    --fs-heading: clamp(2.6rem, 5vw, 3.2rem);
+    --fs-subtitle: clamp(2rem, 3vw, 2.2rem);
+    --fs-body: 1.8rem;
+
+    // Default Layout
+    --nav-height: 80px;
+    --nav-menu-width: 400px;
+    --default-layout-width: 1150px;
+    --default-layout-horizontal-spacer: 24px;
+}
+
+.light {
+    --bg-primary: #fff;
+    --bg-secondary: #d1d5db;
+    --bg-blur: rgba(255, 255, 255, 0.86);
+
+    --text-primary: #334155;
+    --text-secondary: #64748b;
+    --text-muted: #cbd5e1;
+
+    --box-shadow: 0px 0px 6px rgba(21, 32, 43, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+body {
+    transition: ease-out 300ms;
+    color: var(--text-secondary);
+    background-color: var(--bg-primary);
+    font-family: var(--font-family);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    overflow-y: overlay;
+    overflow-x: hidden;
+}
+
+a[href] {
+    text-decoration: none;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+/* // Scrollbar CSS */
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+button,
+input,
+textarea,
+[tabindex] {
+    border: none;
+    outline: none;
+}
+
+/* // Fonts emmbeded */
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/ProximaNova-Semibold.woff2');
+    font-weight: 600;
+}
+@font-face {
+    font-family: ProximaNova;
+    src: url('/assets/fonts/Proxima-Nova-Bold.woff');
+    font-weight: 700;
+}
+@font-face {
+    font-family: SofiaPro;
+    src: url('/assets/fonts/sofiapro-bold.woff');
+    font-weight: 700;
+}

@@ -1,0 +1,33 @@
+.wrapper {
+    padding: 10rem 0;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    margin-bottom: 4rem;
+    white-space: nowrap;
+
+    color: var(--text-primary);
+    font-size: var(--fs-heading);
+}
+
+.heading::before {
+    counter-increment: section;
+    content: '0' counter(section) '.';
+
+    bottom: -2px;
+    margin-right: 1rem;
+    position: relative;
+    font-weight: 400;
+    color: var(--primary-color);
+    font-size: var(--fs-subtitle);
+}
+.heading::after {
+    content: '';
+    width: 30rem;
+    margin-left: 2rem;
+    border-top: var(--heading-divider);
+}

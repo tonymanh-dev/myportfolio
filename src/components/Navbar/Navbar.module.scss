@@ -1,0 +1,101 @@
+// Nav large screen
+
+.nav {
+    width: 100%;
+    height: var(--nav-height);
+    padding: 0 4rem;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+
+    background-color: var(--bg-blur);
+    backdrop-filter: blur(4px);
+    -webkit-box-pack: justify;
+    -webkit-backdrop-filter: blur(4px);
+
+    // Nav logo
+    .logo {
+        display: flex;
+        align-items: center;
+        border-radius: 50%;
+        img {
+            width: 4rem;
+            height: 4rem;
+            object-fit: cover;
+        }
+    }
+
+    // Nav actions
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            -webkit-box-align: center;
+            counter-reset: item;
+        }
+
+        .nav-item {
+            margin: 0 6px;
+            font-weight: 500;
+            position: relative;
+
+            a {
+                line-height: 2;
+                padding: 0.8rem 1.2rem;
+                color: var(--text-secondary);
+                &:hover {
+                    color: var(--primary-color);
+                }
+            }
+            a::before {
+                counter-increment: item;
+                content: '0' counter(item) '.';
+                margin-right: 5px;
+                color: var(--primary-color);
+                font-size: 1.5rem;
+                font-weight: 400;
+                text-align: right;
+            }
+            .underline {
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                right: 0;
+                height: 2px;
+                margin: 0 6px;
+                background: var(--primary-color);
+            }
+        }
+
+        .dark__mode {
+            display: flex;
+            align-items: center;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 1rem;
+            border-radius: 5rem;
+            margin-right: 1rem;
+
+            &:hover {
+                color: var(--primary-color);
+            }
+        }
+        // Actions
+        @media screen and (max-width: 900px) {
+            display: none;
+        }
+    }
+
+    // Navbar mobile
+    @media screen and (max-width: 600px) {
+        padding: 0 3rem;
+    }
+}
+// Nav mobile
+////////////////////////////////////////////////
