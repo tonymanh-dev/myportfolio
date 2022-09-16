@@ -57,7 +57,7 @@ export const works = [
             'Customizable timer intervals to suit your preference Task list to manage your works Music background during Pomodoro section',
         image: project1,
         tech: ['React', 'Rexdux', 'Tailwindcss', 'Firebase'],
-        live: '#projectlink',
+        live: 'https://pomomusic.netlify.app/',
         github: '#git',
     },
     {
@@ -67,7 +67,7 @@ export const works = [
             "You can able to buy or sell crypto. Showing profit/loss, check realtime coin's price, infomation and more...",
         image: project_light,
         tech: ['React', 'Rexdux', 'MUI 5', 'Coingeko API'],
-        live: '#projectlink',
+        live: 'https://crypto-man.netlify.app/',
         github: '#git',
     },
     {
@@ -78,7 +78,7 @@ export const works = [
             'Customizable timer intervals to suit your preference Task list to manage your works Music background during Pomodoro section',
         image: project2,
         tech: ['React', 'Rexdux', 'Tailwindcss', 'Firebase'],
-        live: '#projectlink',
+        live: 'https://tonymanh.netlify.app/',
         github: '#git',
     },
     {
