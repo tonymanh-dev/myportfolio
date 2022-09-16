@@ -23,8 +23,6 @@ const {
     firebase,
     about01,
     about02,
-    about03,
-    about04,
 
     project2,
     project1,
@@ -89,7 +87,7 @@ export const works = [
         title: 'Pomodoro Music',
         description:
             'Customizable timer intervals to suit your preference Task list to manage your works Music background during Pomodoro section',
-        image: about04,
+        image: about01,
         tech: ['React', 'Rexdux', 'Tailwindcss', 'Firebase'],
         live: '#projectlink',
         github: '#git',

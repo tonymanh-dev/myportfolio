@@ -12,8 +12,6 @@ import sass from '../assets/images/sass.png'
 import typescript from '../assets/images/typescript.png'
 import about01 from '../assets/images/about01.png'
 import about02 from '../assets/images/about02.png'
-import about03 from '../assets/images/about03.png'
-import about04 from '../assets/images/about04.png'
 import circle from '../assets/images/circle.svg'
 import firebase from '../assets/images/firebase.png'
 import bootstrap from '../assets/images/bootstrap.png'
@@ -54,8 +52,6 @@ export default {
     typescript,
     about01,
     about02,
-    about03,
-    about04,
     profile,
     circle,
 }
