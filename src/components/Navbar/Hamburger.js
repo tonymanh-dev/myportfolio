@@ -17,16 +17,15 @@ const transition = { duration: 0.33 }
 const cx = classNames.bind(styles)
 
 const Hamburger = ({ toggleMenu, isOpen }) => {
-    console.log(isOpen)
     return (
         <button onClick={toggleMenu} className={cx('menu__icon')}>
-            <svg width="26" height="26" viewBox="0 0 23 23">
+            <svg width="30" height="30" viewBox="0 0 23 23">
                 <Path
                     animate={isOpen ? 'open' : 'closed'}
                     initial={false}
                     variants={{
                         closed: {
-                            d: 'M 2 2.5 L 20 2.5',
+                            d: 'M 4 2.5 L 30 2.5',
                             stroke: '#fff',
                         },
                         open: {
@@ -37,7 +36,7 @@ const Hamburger = ({ toggleMenu, isOpen }) => {
                     transition={transition}
                 />
                 <Path
-                    d="M 2 9.423 L 20 9.423"
+                    d="M 1 9.423 L 30 9.423"
                     stroke="#fff"
                     animate={isOpen ? 'open' : 'closed'}
                     initial={false}
@@ -52,7 +51,7 @@ const Hamburger = ({ toggleMenu, isOpen }) => {
                     initial={false}
                     variants={{
                         closed: {
-                            d: 'M 2 16.346 L 20 16.346',
+                            d: 'M 10 16.346 L 30 16.346',
                             stroke: '#fff',
                         },
                         open: {

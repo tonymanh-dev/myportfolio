@@ -1,17 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import classNames from 'classnames/bind'
-import styles from './Navbar.module.scss'
 import { BsMoonStarsFill, BsFillSunFill } from 'react-icons/bs'
-import { CgMenuRight, CgClose } from 'react-icons/cg'
-import { Button } from '../index'
+import { HiOutlineVolumeUp, HiOutlineVolumeOff } from 'react-icons/hi'
 
-import { images } from '../../constants/index'
-import Hamburger from './Hamburger'
 import NavMenu from './NavMenu'
+import { Button, Loading } from '../index'
+import { navLinks, images, music, logo } from '../../constants/index'
+import styles from './Navbar.module.scss'
 
 const cx = classNames.bind(styles)
-const navLinks = ['About', 'Skills', 'Work', 'Contact']
 
 const getThemeFromStorage = () => {
     const getTheme = localStorage.getItem('theme')
@@ -22,57 +20,91 @@ const getThemeFromStorage = () => {
     return theme
 }
 
-const Navbar = () => {
+const Navbar = ({ aboutRef }) => {
     const [theme, setTheme] = useState(getThemeFromStorage())
     const [link, setLink] = useState('')
-    const [isOpen, setIsOpen] = useState(false)
+    const [isMusic, setIsMusic] = useState(false)
+    const [scrollDown, setScrollDown] = useState('')
 
-    const toggletheme = () => {
+    const musicRef = useRef(null)
+
+    const toggleTheme = () => {
         setTheme(theme === 'dark' ? 'light' : 'dark')
     }
 
+    const toggleMusic = () => {
+        const audio = musicRef.current
+        setIsMusic(!isMusic)
+
+        isMusic ? audio.pause() : audio.play()
+    }
+
     useEffect(() => {
-        document.body.classList = theme
+        document.body.setAttribute('id', theme)
         localStorage.setItem('theme', theme)
     }, [theme])
 
+    //   handle click to scroll
+    const scrollTo = (el) => {
+        const sectionId = document.getElementById(el)
+        sectionId.scrollIntoView({ behavior: 'smooth' })
+    }
+
+    // Handle hidden navbar when scroll down
+    useEffect(() => {
+        let lastScroll = 0
+
+        window.addEventListener('scroll', () => {
+            const curScroll = window.pageYOffset
+
+            if (curScroll > lastScroll && !scrollDown) {
+                setScrollDown('scroll-down')
+            }
+
+            if (curScroll < lastScroll) {
+                setScrollDown('scroll-up')
+            }
+
+            if (curScroll <= 0) setScrollDown('')
+
+            lastScroll = curScroll
+        })
+    }, [scrollDown])
+
     return (
-        <motion.div
-            initial={{ opacity: 0, y: -100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-                ease: 'easeInOut',
-                duration: 1,
-            }}
-        >
-            <nav className={cx('nav')}>
-                <div className={cx('logo')}>
-                    <img src={images.eth} alt="" />
+        <nav className={cx(scrollDown)}>
+            <motion.div
+                initial={{ opacity: 0, y: -100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                    ease: 'easeInOut',
+                    duration: 1.2,
+                }}
+                className={cx('nav')}
+            >
+                <div
+                    className={cx('logo')}
+                    onClick={() => window.location.reload()}
+                >
+                    {logo}
                 </div>
                 <div className={cx('nav-actions')}>
                     <ul className={cx('nav-links')}>
-                        {navLinks.map((item) => (
+                        {navLinks.map((label) => (
                             <motion.li
-                                key={`link-${item}`}
+                                key={`link-${label}`}
                                 className={cx('nav-item')}
-                                onClick={() => setLink(item)}
-                                variants={item}
-                                whileHover={{ scale: 1.1 }}
+                                onClick={() => {
+                                    setLink(label)
+                                    scrollTo(`#${label.toLowerCase()}`)
+                                }}
+                                variants={label}
+                                // whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <a
-                                    href={`#${item.toLowerCase()}`}
-                                    // style={{
-                                    //     color:
-                                    //         item === link
-                                    //             ? 'var(--primary-color)'
-                                    //             : '',
-                                    // }}
-                                >
-                                    {item}
-                                </a>
+                                <a href={`#${label.toLowerCase()}`}>{label}</a>
 
-                                {item === link && (
+                                {/* {label === link && (
                                     <motion.div
                                         className={cx('underline')}
                                         layoutId="underline"
@@ -81,11 +113,19 @@ const Navbar = () => {
                                             duration: 0.15,
                                         }}
                                     />
-                                )}
+                                )} */}
                             </motion.li>
                         ))}
                     </ul>
-                    <div className={cx('dark__mode')} onClick={toggletheme}>
+                    {/* <div className={cx('music')} onClick={toggleMusic}>
+                        <audio src={music} ref={musicRef} loop />
+                        {isMusic ? (
+                            <HiOutlineVolumeUp className={cx('active')} />
+                        ) : (
+                            <HiOutlineVolumeOff />
+                        )}
+                    </div> */}
+                    <div className={cx('dark__mode')} onClick={toggleTheme}>
                         {theme === 'dark' ? (
                             <BsMoonStarsFill className={cx('moon')} />
                         ) : (
@@ -100,11 +140,14 @@ const Navbar = () => {
                 {/* -----------Nav mobile---------- */}
 
                 <NavMenu
-                    toggleMenu={() => setIsOpen(!isOpen)}
-                    isOpen={isOpen}
+                    toggleTheme={toggleTheme}
+                    theme={theme}
+                    setLink={setLink}
+                    link={link}
+                    scrollTo={scrollTo}
                 />
-            </nav>
-        </motion.div>
+            </motion.div>
+        </nav>
     )
 }
 

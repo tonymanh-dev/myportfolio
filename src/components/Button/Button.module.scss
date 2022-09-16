@@ -5,20 +5,25 @@
     font-family: var(--font-family);
     font-size: 1.6rem;
     font-weight: 600;
-    min-width: 100px;
-    padding: 10px 16px;
-    border-radius: 30px;
+    min-width: 10rem;
+    padding: 1.2rem 2.4rem;
+    border-radius: 3rem;
     cursor: pointer;
     background: transparent;
     border: 1px solid transparent;
+    position: relative;
     user-select: none;
+    gap: 1.2rem;
 
     transition: all 0.5s ease-out;
+
     &:hover {
         scale: 0.9;
         transition: ease-out 0.2ms;
+
+        // Animation for narrow icon
         .icon {
-            animation: 0.6s linear 1s infinite alternate slidein;
+            animation: 0.5s linear 1s infinite alternate slidein;
         }
         @keyframes slidein {
             from {
@@ -36,34 +41,44 @@
     }
 
     + .wrapper {
-        margin-left: 8px;
+        margin-left: 0.8rem;
     }
 
     &.disabled {
         pointer-events: none;
-        opacity: 0.3;
+        opacity: 0.6;
+    }
+
+    .loading:after {
+        content: '';
+        box-sizing: border-box;
+
+        width: 2.2rem;
+        height: 2.2rem;
+
+        border-radius: 50%;
+        border: 2px solid white;
+        border-top-color: var(--primary-color);
+        animation: spinner 0.6s linear infinite;
+
+        @keyframes spinner {
+            to {
+                transform: rotate(360deg);
+            }
+        }
     }
 }
 
 .icon + .title,
 .title + .icon {
-    margin-left: 1.6rem;
+    // margin-left: 1.6rem;
+    position: relative;
 }
 .icon {
     display: inline-block;
-    width: 20px;
+    width: 2rem;
     text-align: center;
-    // animation: 0.8s linear 1s infinite alternate slidein;
 }
-// @keyframes slidein {
-//     from {
-//         transform: translateX(0%);
-//     }
-
-//     to {
-//         transform: translateX(100%);
-//     }
-// }
 
 // Button types
 .primary {
@@ -71,7 +86,7 @@
     background: var(--primary-color);
 
     &:hover {
-        background: #2563eb;
+        background: var(--secondary-color);
     }
 }
 
@@ -96,11 +111,65 @@
 
 // Button sizes
 .small {
-    min-width: 88px;
-    padding: 8px 12px;
+    min-width: 8.8rem;
+    padding: 0.8rem 1.2rem;
 }
 
 .large {
-    min-width: 156px;
-    padding: 14px 16px;
+    min-width: 15.6rem;
+    padding: 1.4rem 2.8rem;
+}
+
+@media screen and (max-width: 600px) {
+    .small {
+        min-width: 12rem;
+        padding: 1.4rem 1.6rem;
+    }
+
+    .wrapper {
+        min-width: 15rem;
+        padding: 1.6rem 1.8rem;
+    }
+
+    .large {
+        min-width: 18rem;
+        padding: 1.8rem 2rem;
+        font-size: 1.8rem;
+    }
+}
+
+#button-3 {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#button-3 a {
+    position: relative;
+    transition: all 0.45s ease-Out;
+}
+
+#circle {
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #bfc0c0;
+    position: absolute;
+    transition: all 0.5s ease-Out;
+    top: 20px;
+    left: 70px;
+}
+
+#button-3:hover #circle {
+    width: 200%;
+    height: 500%;
+    opacity: 1;
+    top: -70px;
+    left: -70px;
+}
+
+#button-3:hover a {
+    color: #2d3142;
 }

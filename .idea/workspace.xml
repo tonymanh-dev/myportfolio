@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e60f3fdc-7130-4206-a425-8e89d2b81663" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/images/pomomusic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button/Button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/Button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button/Button.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/Button.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GlobalStyles/GlobalStyles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GlobalStyles/GlobalStyles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Hamburger.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Hamburger.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Hamburger.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Hamburger.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/NavMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/NavMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/NavMenu.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/NavMenu.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Navigation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Navigation.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Section/Section.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Section/Section.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Section/Section.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Section/Section.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Social/Social.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Social/Social.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Social/Social.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Social/Social.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/images.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/images.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/skills.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/About/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/Contact/Contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/Contact/Contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/Contact/Contact.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/Contact/Contact.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/Footer/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/Footer/Footer.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/Footer/Footer.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/Skills/Skills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/Skills/Skills.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/Skills/Skills.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/Skills/Skills.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/Work/Work.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/Work/Work.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="2ELLotaXRKRNtJO9g9JrvRPRu0f" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e60f3fdc-7130-4206-a425-8e89d2b81663" name="Changes" comment="" />
+      <created>1662370101046</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662370101046</updated>
+      <workItem from="1662370109602" duration="56000" />
+      <workItem from="1662880729603" duration="156000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

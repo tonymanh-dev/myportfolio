@@ -1,21 +1,21 @@
-import React, { useState } from 'react'
+import React, { forwardRef, useState } from 'react'
 import styles from './Skills.module.scss'
 import { motion } from 'framer-motion'
 import classNames from 'classnames/bind'
 import { frontends, others } from '../../constants/index'
-import { Button, Section } from '../../components/index'
+import { Button, Section, contentsAnimate } from '../../components/index'
 
 const cx = classNames.bind(styles)
 
-const Skills = () => {
+const Skills = forwardRef((props, ref) => {
     const [more, setMore] = useState(false)
 
     const toggleShowMore = () => {
         setMore(!more)
     }
     return (
-        <Section title="My Skills">
-            <div className={cx('contents')}>
+        <Section id="#skills" ref={ref} title="My Skills">
+            <motion.div variants={contentsAnimate} className={cx('contents')}>
                 <h3 className={cx('subtitle')}>Frontend Development</h3>
                 <motion.ul className={cx('item-wrapper')}>
                     {frontends.map((item) => (
@@ -38,10 +38,12 @@ const Skills = () => {
                 </motion.ul>
                 {more && (
                     <motion.div
+                        viewport={{ once: true }}
                         animate={{ opacity: [0, 1], y: [0, -10] }}
                         transition={{ duration: 0.3, delay: 0.2 }}
                     >
                         <h3 className={cx('second-sub')}>Others</h3>
+
                         <ul className={cx('others-wrapper')}>
                             {others.map((item) => (
                                 <li key={item.label} className={cx('item')}>
@@ -62,14 +64,14 @@ const Skills = () => {
                 )}
 
                 <Button
-                    text
+                    outline
                     title={more ? 'Show less' : 'Show more'}
                     onClick={toggleShowMore}
-                    style={{ marginTop: '2rem' }}
+                    style={{ marginTop: '5rem' }}
                 />
-            </div>
+            </motion.div>
         </Section>
     )
-}
+})
 
 export default Skills

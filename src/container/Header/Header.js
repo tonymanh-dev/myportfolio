@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { motion } from 'framer-motion'
 import styles from './Header.module.scss'
 import classNames from 'classnames/bind'
@@ -29,9 +29,9 @@ const item = {
     hidden: { opacity: 0, y: 30 },
 }
 
-const Header = () => {
+const Header = forwardRef((props, ref) => {
     return (
-        <section className={cx('header__wrapper')}>
+        <section ref={ref} id="#home" className={cx('header__wrapper')}>
             <motion.div
                 className={cx('header__heading')}
                 initial="hidden"
@@ -58,7 +58,7 @@ const Header = () => {
                     variants={item}
                     transition={{ duration: 0.5, delay: 0.6 }}
                 >
-                    <h1>A creative front end developer.</h1>
+                    <h1>A front-end web developer.</h1>
                 </motion.div>
                 <motion.div
                     className={cx('info')}
@@ -66,8 +66,10 @@ const Header = () => {
                     transition={{ duration: 0.5, delay: 0.8 }}
                 >
                     <p>
-                        I’m a software engineer specializing in building (and
-                        occasionally designing) exceptional digital experiences.{' '}
+                        I love creating interactive applications, building
+                        stunning interfaces and amazing experiences on the web.
+                        I'm currently looking for the first job as a front end
+                        developer.
                     </p>
                 </motion.div>
                 <motion.div
@@ -80,6 +82,6 @@ const Header = () => {
             </motion.div>
         </section>
     )
-}
+})
 
 export default Header

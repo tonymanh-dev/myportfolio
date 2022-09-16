@@ -1,7 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import styles from './Social.module.scss'
 import classNames from 'classnames/bind'
+
+import styles from './Social.module.scss'
 import {
     FaGithub,
     FaTwitter,
@@ -12,14 +13,14 @@ import {
 
 const cx = classNames.bind(styles)
 
-const socialIcon = [
-    {
-        icon: <FaGithub />,
-        link: '#git',
-    },
+export const socialIcon = [
     {
         icon: <FaLinkedinIn />,
         link: '#link',
+    },
+    {
+        icon: <FaGithub />,
+        link: '#git',
     },
     {
         icon: <FaTwitter />,
@@ -31,14 +32,25 @@ const socialIcon = [
     },
 ]
 
-const Social = () => {
+const container = {
+    hidden: {
+        opacity: 0,
+    },
+    show: {
+        opacity: 1,
+        transition: { duration: 1, delay: 3 },
+    },
+}
+
+const Social = ({ vertical }) => {
     return (
         <motion.div
-            whileInView={{ opacity: [0, 1] }}
-            transition={{ duration: 1, delay: 3 }}
-            className={cx('app__social')}
+            initial={vertical ? 'hidden' : ''}
+            animate={vertical ? 'show' : ''}
+            variants={container}
+            className={cx(vertical ? 'vertical' : 'horizontal')}
         >
-            <ul className={cx('social__list')}>
+            <ul className={cx('wrapper')}>
                 {socialIcon.map(({ icon, link }) => (
                     <motion.li
                         whileHover={{ scale: 1.1, y: -5 }}
@@ -46,7 +58,7 @@ const Social = () => {
                         key={link}
                         className={cx('item')}
                     >
-                        <a href={link} className={cx('label')}>
+                        <a href={link} className={cx('icon')}>
                             {icon}
                         </a>
                     </motion.li>

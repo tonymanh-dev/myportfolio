@@ -3,38 +3,22 @@
 @import 'normalize.css';
 
 :root {
-    // Dark mode color palette
+    // Default variable
     //
-    --primary-color: #0ea5e9;
+    // Dark mode color palette
+    --primary-color: #12cbfe;
+    // --primary-color: #1d9bf0;
     // --primary-color: #3b82f6;
     --secondary-color: #2563eb;
 
-    // Background color
-    --bg-primary: #15202b;
-    --bg-secondary: #273340;
-
-    --bg-blur: rgba(21, 32, 43, 0.3);
-
-    // Text colors
-    --text-primary: #e2e8f0;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-
-    // Fixed colors
-    //
+    // Other colors
     --black-color: #121212;
     --gray-color: #404040;
     --white-color: #ffff;
 
-    --shadow-1: 0px 0px 6px rgba(255, 255, 255, 0.15);
-    --shadow-2: 8px 8px 8px 0px rgba(0, 0, 0, 0.3);
-
-    --heading-divider: 1px solid rgba(255, 255, 255, 0.09);
-
     // Border radius
-    // --img-radius: 6px;
     --border-4: 4px;
-    --border-6: 8px;
+    --border-6: 6px;
     --rounded: 50px;
 
     // Font
@@ -45,23 +29,60 @@
     --fs-subtitle: clamp(2rem, 3vw, 2.2rem);
     --fs-body: 1.8rem;
 
-    // Default Layout
+    // Layout
     --nav-height: 80px;
     --nav-menu-width: 400px;
     --default-layout-width: 1150px;
     --default-layout-horizontal-spacer: 24px;
+
+    ////////////////////////////////////////
+    // Customize theme
+
+    // Background colors
+    --bg-primary: #15202b;
+    --bg-secondary: #273340;
+    // #132f4c;
+
+    --bg-blur: rgba(21, 32, 43, 0.3);
+
+    // Text colors
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+
+    // Box shadow
+    --nav-shadow: 0 10px 30px -10px rgba(13, 21, 29, 0.8);
+
+    --shadow-primary: 0px 3px 4px rgba(18, 203, 254, 0.1);
+    --shadow-1: 0px 15px 30px -12px rgba(13, 21, 29, 0.8);
+    --shadow-2: 8px 8px 8px 0px rgba(0, 0, 0, 0.3);
+
+    // Borders / Line
+    --divider: 1px solid rgba(255, 255, 255, 0.09);
 }
 
-.light {
+#light {
+    --primary-color: #1d9bf0;
+
+    // Background colors
     --bg-primary: #fff;
-    --bg-secondary: #d1d5db;
+    --bg-secondary: #f3f4f6;
     --bg-blur: rgba(255, 255, 255, 0.86);
 
-    --text-primary: #334155;
-    --text-secondary: #64748b;
-    --text-muted: #cbd5e1;
+    // Text colors
+    --text-primary: #374151;
+    --text-secondary: #374151;
+    --text-muted: #9ca3af;
 
-    --box-shadow: 0px 0px 6px rgba(21, 32, 43, 0.15);
+    // Box shadow
+    --nav-shadow: 0 10px 30px -10px rgba(21, 32, 43, 0.15);
+
+    --shadow-primary: 0px 3px 4px rgba(18, 203, 254, 0.1);
+    --shadow-1: 0px 15px 30px -12px rgba(0, 0, 0, 0.25);
+    --shadow-2: 8px 8px 8px 0px rgba(0, 0, 0, 0.3);
+
+    // Borders / Line
+    --divider: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -83,6 +104,17 @@ body {
     text-rendering: optimizeSpeed;
     overflow-y: overlay;
     overflow-x: hidden;
+}
+
+body.bg-blur {
+    overflow: hidden;
+}
+
+body.bg-blur #container {
+    pointer-events: none;
+    user-select: none;
+    filter: blur(5px) brightness(0.7);
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 a[href] {

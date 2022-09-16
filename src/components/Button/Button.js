@@ -1,7 +1,6 @@
 import React from 'react'
 import classNames from 'classnames/bind'
 import styles from './Button.module.scss'
-import { motion } from 'framer-motion'
 
 const cx = classNames.bind(styles)
 
@@ -11,12 +10,13 @@ const Button = ({
     text = false,
     primary = false,
     outline = false,
+    loading = false,
     small = false,
     large = false,
-    style,
+    type,
     className,
+    disabled,
 
-    leftIcon,
     rightIcon,
     onClick,
     ...passProps
@@ -34,15 +34,16 @@ const Button = ({
         [className]: className,
         primary,
         outline,
+        loading,
+        disabled,
         small,
         large,
         text,
     })
     return (
-        <Comp className={classes} {...props} style={style}>
-            {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
-
+        <Comp className={classes} {...props} type={type}>
             <span className={cx('title')}>{title}</span>
+            {loading && <span className={cx('loading')}>{loading}</span>}
 
             {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
         </Comp>

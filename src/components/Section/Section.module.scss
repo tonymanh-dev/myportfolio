@@ -1,20 +1,24 @@
 .wrapper {
     padding: 10rem 0;
 }
-
 .heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.heading-title {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     position: relative;
-    margin-bottom: 4rem;
     white-space: nowrap;
 
     color: var(--text-primary);
     font-size: var(--fs-heading);
 }
 
-.heading::before {
+.heading-title::before {
     counter-increment: section;
     content: '0' counter(section) '.';
 
@@ -25,9 +29,16 @@
     color: var(--primary-color);
     font-size: var(--fs-subtitle);
 }
-.heading::after {
-    content: '';
+
+.heading-divider {
+    display: block;
     width: 30rem;
     margin-left: 2rem;
-    border-top: var(--heading-divider);
+    border-top: var(--divider);
+}
+
+@media screen and(max-width: 600px) {
+    .heading-divider {
+        display: none;
+    }
 }

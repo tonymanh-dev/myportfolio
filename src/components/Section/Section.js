@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import classNames from 'classnames/bind'
 import styles from './Section.module.scss'
 
@@ -6,24 +6,59 @@ import { motion } from 'framer-motion'
 
 const cx = classNames.bind(styles)
 
-const Section = ({ title, children }) => {
-    return (
-        <section
-            // initial={{ opacity: 0, y: 100 }}
-            // whileInView={{ opacity: [0, 1], y: [0, -100] }}
-            // transition={{ duration: 0.8, delay: 0.5 }}
-            className={cx('wrapper')}
-        >
-            <motion.h2
-                whileInView={{ opacity: [0, 1] }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-                className={cx('heading')}
-            >
-                {title}
-            </motion.h2>
-            {children}
-        </section>
-    )
+const headingAnimate = {
+    hidden: { x: -100, opacity: 0 },
+    show: {
+        x: 0,
+        opacity: 1,
+        transition: { type: 'spring', duration: 2 },
+    },
 }
+
+const headingDivider = {
+    hidden: { x: 100, opacity: 0 },
+    show: {
+        x: 0,
+        opacity: 1,
+        transition: { type: 'spring', duration: 2 },
+    },
+}
+
+export const contentsAnimate = {
+    hidden: { y: 100, opacity: 0 },
+    show: {
+        y: 0,
+        opacity: 1,
+        transition: { type: 'spring', duration: 3, delay: 0.3 },
+    },
+}
+
+const Section = forwardRef((props, ref) => {
+    return (
+        <motion.section
+            id={props.id}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ staggerChildren: 0.5 }}
+            className={cx('wrapper')}
+            ref={ref}
+        >
+            <div className={cx('heading')}>
+                <motion.h2
+                    variants={headingAnimate}
+                    className={cx('heading-title')}
+                >
+                    {props.title}
+                </motion.h2>
+                <motion.span
+                    variants={headingDivider}
+                    className={cx('heading-divider')}
+                ></motion.span>
+            </div>
+            {props.children}
+        </motion.section>
+    )
+})
 
 export default Section
