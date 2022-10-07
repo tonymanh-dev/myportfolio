@@ -4,55 +4,53 @@
 
 :root {
     // Default variable
-    //
-    // Dark mode color palette
     --primary-color: #12cbfe;
-    // --primary-color: #1d9bf0;
-    // --primary-color: #3b82f6;
     --secondary-color: #2563eb;
 
     // Other colors
     --black-color: #121212;
     --gray-color: #404040;
     --white-color: #ffff;
+    --pink-color: #ff6384;
+    --green-color: #0ecb81;
+    --purple-color: #798bff;
+    --sky-color: #4bc0c0;
 
     // Border radius
     --border-4: 4px;
     --border-6: 6px;
     --rounded: 50px;
 
-    // Font
-    --font-family: 'ProximaNova', sans-serif;
-
     // Font size
     --fs-heading: clamp(2.6rem, 5vw, 3.2rem);
-    --fs-subtitle: clamp(2rem, 3vw, 2.2rem);
+    --fs-subtitle: clamp(2.2rem, 4vw, 2.4rem);
     --fs-body: 1.8rem;
 
     // Layout
     --nav-height: 80px;
-    --nav-menu-width: 400px;
-    --default-layout-width: 1150px;
-    --default-layout-horizontal-spacer: 24px;
+    --sidebar-width: 400px;
+
+    // Animation
+    --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 
     ////////////////////////////////////////
-    // Customize theme
+    // Dynamic theme
 
     // Background colors
     --bg-primary: #15202b;
     --bg-secondary: #273340;
-    // #132f4c;
+    --bg-sidebar: #001e3c;
+    --bg-blur: rgba(21, 32, 43, 0.9);
 
-    --bg-blur: rgba(21, 32, 43, 0.3);
+    --scrollbar-thumb: rgba(255, 255, 255, 0.05);
 
     // Text colors
-    --text-primary: #e2e8f0;
+    --text-primary: #cbd5e1;
     --text-secondary: #94a3b8;
     --text-muted: #64748b;
 
     // Box shadow
     --nav-shadow: 0 10px 30px -10px rgba(13, 21, 29, 0.8);
-
     --shadow-primary: 0px 3px 4px rgba(18, 203, 254, 0.1);
     --shadow-1: 0px 15px 30px -12px rgba(13, 21, 29, 0.8);
     --shadow-2: 8px 8px 8px 0px rgba(0, 0, 0, 0.3);
@@ -62,21 +60,23 @@
 }
 
 #light {
-    --primary-color: #1d9bf0;
+    // --primary-color: #2ad0fe;
 
     // Background colors
     --bg-primary: #fff;
     --bg-secondary: #f3f4f6;
+    --bg-sidebar: #ffff;
     --bg-blur: rgba(255, 255, 255, 0.86);
+
+    --scrollbar-thumb: rgba(0, 0, 0, 0.1);
 
     // Text colors
     --text-primary: #374151;
-    --text-secondary: #374151;
+    --text-secondary: #4b5563;
     --text-muted: #9ca3af;
 
     // Box shadow
     --nav-shadow: 0 10px 30px -10px rgba(21, 32, 43, 0.15);
-
     --shadow-primary: 0px 3px 4px rgba(18, 203, 254, 0.1);
     --shadow-1: 0px 15px 30px -12px rgba(0, 0, 0, 0.25);
     --shadow-2: 8px 8px 8px 0px rgba(0, 0, 0, 0.3);
@@ -94,11 +94,12 @@
 html {
     font-size: 62.5%;
 }
+
 body {
     transition: ease-out 300ms;
     color: var(--text-secondary);
     background-color: var(--bg-primary);
-    font-family: var(--font-family);
+    font-family: 'ProximaNova', -apple-system, system-ui, sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
@@ -119,8 +120,6 @@ body.bg-blur #container {
 
 a[href] {
     text-decoration: none;
-    line-height: 1.5;
-    color: var(--text-secondary);
 }
 
 /* // Scrollbar CSS */
@@ -129,24 +128,9 @@ html *::-webkit-scrollbar {
     width: 8px;
 }
 
-html *::-webkit-scrollbar {
-    border-radius: 0;
-    width: 8px;
-}
-
 html *::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.15);
-}
-
-html *::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.15);
-}
-
-html *::-webkit-scrollbar-track {
-    border-radius: 0;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: var(--scrollbar-thumb);
 }
 
 html *::-webkit-scrollbar-track {

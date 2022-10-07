@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 import { motion } from 'framer-motion'
 import classNames from 'classnames/bind'
-import styles from './NavMenu.module.scss'
+import styles from './Sidebar.module.scss'
 import { Button } from '../index'
 import Hamburger from './Hamburger'
 import { navLinks } from '../../constants/index'
-import { Social } from '../../components/index'
+import { Social } from '../index'
 
-import { BsMoonStarsFill, BsFillSunFill } from 'react-icons/bs'
+import { MdLightMode, MdOutlineNightlight } from 'react-icons/md'
 
 const lists = {
     show: {
@@ -35,7 +35,7 @@ const item = {
     show: {
         y: 0,
         opacity: 1,
-        transition: { type: 'spring', bounce: 0.5, duration: 1 },
+        transition: { type: 'spring', bounce: 0.5, duration: 1.5 },
     },
     hidden: {
         y: 50,
@@ -43,9 +43,9 @@ const item = {
     },
 }
 
-const menu = {
+const sidebar = {
     open: {
-        clipPath: 'circle(1000px at 89% 5%',
+        clipPath: 'circle(1500px at 89% 5%',
         transition: {
             duration: 0.2,
         },
@@ -62,36 +62,56 @@ const menu = {
 
 const cx = classNames.bind(styles)
 
-const NavMenu = ({ theme, toggleTheme, setLink, link, scrollTo }) => {
+const Sidebar = ({ theme, toggleTheme, scrollTo }) => {
     const [isOpen, setIsOpen] = useState(false)
+    const [link, setLink] = useState('')
 
-    const toggleMenu = () => {
-        document.body.classList = isOpen ? '' : 'bg-blur'
+    const sidebarRef = useRef(null)
+
+    // Handle open/close Sidebar
+    const toggleSidebar = () => {
         setIsOpen(!isOpen)
+        document.body.classList.toggle('bg-blur')
     }
 
+    // Handle click scroll to section
     const handleClickItem = (label) => {
-        document.body.classList = ''
+        document.body.classList.remove('bg-blur')
 
         setLink(label)
         setIsOpen(false)
         scrollTo(`#${label.toLowerCase()}`)
     }
 
+    // Handle click outside to close Sidebar
+    const onClickOutside = () => {
+        setIsOpen(false)
+        document.body.classList.remove('bg-blur')
+    }
+
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (sidebarRef.current && !sidebarRef.current.contains(e.target)) {
+                onClickOutside()
+            }
+        }
+        document.addEventListener('click', handleClickOutside, true)
+    })
+
     return (
-        <div className={cx('menu')}>
+        <div ref={sidebarRef} className={cx('sidebar')}>
             <motion.div
-                className={cx('menu-bg')}
-                variants={menu}
+                className={cx('bg-animate')}
+                variants={sidebar}
                 initial={false}
                 animate={isOpen ? 'open' : 'closed'}
             />
-            <Hamburger toggleMenu={toggleMenu} isOpen={isOpen} />
+            <Hamburger toggleSidebar={toggleSidebar} isOpen={isOpen} />
 
             {isOpen && (
-                <div className={cx('menu-inner')}>
+                <div className={cx('inner')}>
                     <motion.ul
-                        className={cx('menu-links')}
+                        className={cx('links')}
                         initial="hidden"
                         animate="show"
                         variants={lists}
@@ -99,7 +119,7 @@ const NavMenu = ({ theme, toggleTheme, setLink, link, scrollTo }) => {
                         {navLinks.map((label) => (
                             <motion.li
                                 key={label}
-                                className={cx('menu-item')}
+                                className={cx('item')}
                                 variants={item}
                                 whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.9 }}
@@ -124,9 +144,9 @@ const NavMenu = ({ theme, toggleTheme, setLink, link, scrollTo }) => {
                     >
                         <div className={cx('dark-mode')} onClick={toggleTheme}>
                             {theme === 'dark' ? (
-                                <BsMoonStarsFill className={cx('moon')} />
+                                <MdLightMode className={cx('sun')} />
                             ) : (
-                                <BsFillSunFill className={cx('sun')} />
+                                <MdOutlineNightlight className={cx('moon')} />
                             )}
                         </div>
                         <Button
@@ -144,4 +164,4 @@ const NavMenu = ({ theme, toggleTheme, setLink, link, scrollTo }) => {
     )
 }
 
-export default NavMenu
+export default Sidebar

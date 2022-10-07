@@ -12,7 +12,7 @@
 }
 
 .subtitle {
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
     font-size: var(--fs-subtitle);
     color: var(--text-secondary);
 }
@@ -51,14 +51,14 @@
     margin-top: 3rem;
 }
 
-// Responsive area
+// Responsive
 @media screen and (max-width: 900px) {
     .item-wrapper {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 786px) {
     .heading::after {
         width: 100%;
     }

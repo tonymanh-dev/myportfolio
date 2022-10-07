@@ -1,3 +1,5 @@
+// Follow by order vertical or horizontal
+
 .vertical {
     position: fixed;
     left: 3rem;
@@ -11,16 +13,17 @@
         justify-content: center;
         align-items: center;
         list-style: none;
+        gap: 0.8rem;
 
         .item {
             padding: 1rem;
-            line-height: 0.5;
             cursor: pointer;
 
             svg {
                 font-size: 2rem;
             }
             .icon {
+                line-height: 1.5;
                 color: var(--text-secondary);
                 transition: ease-out 200ms;
             }
@@ -31,13 +34,19 @@
             }
         }
     }
+
     .wrapper::after {
         content: '';
         height: 10rem;
         margin-top: 1.6rem;
         border-left: 1px solid var(--text-secondary);
     }
-    @media screen and (max-width: 768px) {
+
+    @media screen and (min-width: 1300px) {
+        left: 4.6rem;
+    }
+
+    @media screen and (max-width: 786px) {
         display: none;
     }
 }
@@ -77,11 +86,11 @@
         }
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 900px) {
         display: none;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 786px) {
         .wrapper {
             gap: 1.8rem;
         }

@@ -22,7 +22,14 @@ const Footer = () => {
             <Social horizontal />
 
             <p>
-                Built by <a href="#git">Tony Manh</a>
+                Built by{' '}
+                <a
+                    href="https://twitter.com/manh_tvm"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    Tony Manh
+                </a>
             </p>
             <p>© Tony Manh 2022. All Rights Reserved.</p>
         </motion.div>

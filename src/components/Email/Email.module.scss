@@ -14,6 +14,7 @@
         writing-mode: vertical-lr;
         letter-spacing: 1px;
         line-height: 1;
+        color: var(--text-secondary-color);
 
         &:hover {
             color: var(--primary-color);
@@ -27,7 +28,13 @@
     border-right: 1px solid var(--text-secondary);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 1300px) {
+    .wrapper {
+        right: 4.6rem;
+    }
+}
+
+@media screen and (max-width: 786px) {
     .wrapper {
         display: none;
     }

@@ -1,4 +1,4 @@
-.menu {
+.sidebar {
     width: 5rem;
     height: 5rem;
     margin-right: -1.4rem;
@@ -9,46 +9,20 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    // &:hover {
-    //     background-color: var(--bg-secondary);
-    // }
-    @media screen and (min-width: 768px) {
-        display: none;
-    }
 }
 
-.menu-bg {
+.bg-animate {
     top: 0;
     bottom: 0;
     right: 0;
     height: 100vh;
-    width: var(--nav-menu-width);
+    width: var(--sidebar-width);
     position: fixed;
-
-    background-color: var(--bg-secondary);
-    // background: #001e3c;
+    background: var(--bg-sidebar);
 }
 
-.menu-ham {
-    z-index: 10;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3.4rem;
-    padding: 0.8rem;
-    background-color: transparent;
-
-    color: var(--text-secondary);
-    cursor: pointer;
-
-    &:hover {
-        color: var(--primary-color);
-    }
-}
-
-.menu-inner {
-    width: var(--nav-menu-width);
+.inner {
+    width: var(--sidebar-width);
     position: fixed;
     top: 0;
     right: 0;
@@ -61,11 +35,11 @@
     align-items: center;
 
     background-color: transparent;
-    box-shadow: var(shadow-r);
+    box-shadow: var(--nav-shadow);
     z-index: 9;
     overflow: hidden;
 }
-.menu-links {
+.links {
     height: 80%;
     width: 100%;
     display: flex;
@@ -76,7 +50,7 @@
     counter-reset: item;
 }
 
-.menu-item {
+.item {
     padding: 1.2rem 2rem;
     width: 100%;
     display: flex;
@@ -94,7 +68,7 @@
     }
 }
 
-.menu-item::before {
+.item::before {
     display: block;
     counter-increment: item;
     content: '0' counter(item) '.';
@@ -112,37 +86,47 @@
     align-items: center;
     justify-content: center;
     gap: 3rem;
+}
+.dark-mode {
+    display: flex;
+    align-items: center;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 5rem;
 
-    .dark-mode {
-        display: flex;
-        align-items: center;
-        color: var(--text-secondary);
-        cursor: pointer;
-        padding: 1rem;
-        border-radius: 5rem;
+    svg {
+        font-size: 2.6rem;
+    }
 
-        svg {
-            font-size: 2.6rem;
-        }
+    &:hover {
+        color: var(--primary-color);
+    }
 
-        &:hover {
-            color: var(--primary-color);
-        }
+    .moon {
+        rotate: -14deg;
     }
 }
 
-// Nav menu - Responsive
+// Sidebar - Responsive
+
+@media screen and (min-width: 786px) {
+    .sidebar {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 600px) {
-    .menu-inner,
-    .menu-bg {
+    .inner,
+    .bg-animate {
         width: 100%;
     }
-    .menu-item {
+    .item {
         a {
             font-size: 2.2rem;
         }
     }
-    .menu-item::before {
+    .item::before {
         font-size: 1.8rem;
     }
 

@@ -1,0 +1,52 @@
+.decorations {
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all 1s 'easeOut';
+
+    @media screen and (max-width: 1024px) {
+        display: none;
+    }
+}
+
+.decorations svg:first-child {
+    top: 10rem;
+    right: 10rem;
+    position: absolute;
+    color: var(--pink-color);
+}
+
+.decorations svg:nth-child(2) {
+    top: 21rem;
+    right: 21rem;
+    position: absolute;
+    color: var(--purple-color);
+}
+
+.decorations svg:nth-child(3) {
+    top: 24rem;
+    right: -2rem;
+    position: absolute;
+    color: var(--green-color);
+}
+
+.decorations svg:last-child {
+    top: 44rem;
+    right: 8rem;
+    position: absolute;
+    color: var(--sky-color);
+}
+
+@media screen and (max-width: 1024px) {
+    .decorations svg:nth-last-child(n + 2) {
+        width: 3rem;
+        height: 3rem;
+    }
+    .decorations svg:last-child {
+        width: 5.4rem;
+        height: 5.4rem;
+    }
+}

@@ -6,11 +6,11 @@
     font-size: 1.6rem;
     font-weight: 600;
     min-width: 10rem;
-    padding: 1.2rem 2.4rem;
-    border-radius: 3rem;
+    padding: 1.2rem 2.6rem;
+    border-radius: 5rem;
     cursor: pointer;
     background: transparent;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     position: relative;
     user-select: none;
     gap: 1.2rem;
@@ -18,11 +18,11 @@
     transition: all 0.5s ease-out;
 
     &:hover {
-        scale: 0.9;
+        scale: 0.93;
         transition: ease-out 0.2ms;
 
         // Animation for narrow icon
-        .icon {
+        .right-icon {
             animation: 0.5s linear 1s infinite alternate slidein;
         }
         @keyframes slidein {
@@ -57,7 +57,7 @@
         height: 2.2rem;
 
         border-radius: 50%;
-        border: 2px solid white;
+        border: 2px solid #fff;
         border-top-color: var(--primary-color);
         animation: spinner 0.6s linear infinite;
 
@@ -108,6 +108,9 @@
         text-decoration: underline;
     }
 }
+.href {
+    line-height: 1;
+}
 
 // Button sizes
 .small {
@@ -117,7 +120,8 @@
 
 .large {
     min-width: 15.6rem;
-    padding: 1.4rem 2.8rem;
+    font-size: 1.7rem;
+    padding: 1.6rem 2.8rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -136,40 +140,4 @@
         padding: 1.8rem 2rem;
         font-size: 1.8rem;
     }
-}
-
-#button-3 {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-#button-3 a {
-    position: relative;
-    transition: all 0.45s ease-Out;
-}
-
-#circle {
-    width: 0%;
-    height: 0%;
-    opacity: 0;
-    line-height: 40px;
-    border-radius: 50%;
-    background: #bfc0c0;
-    position: absolute;
-    transition: all 0.5s ease-Out;
-    top: 20px;
-    left: 70px;
-}
-
-#button-3:hover #circle {
-    width: 200%;
-    height: 500%;
-    opacity: 1;
-    top: -70px;
-    left: -70px;
-}
-
-#button-3:hover a {
-    color: #2d3142;
 }

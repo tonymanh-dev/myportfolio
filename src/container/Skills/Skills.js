@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from 'react'
+import React, { useState } from 'react'
 import styles from './Skills.module.scss'
 import { motion } from 'framer-motion'
 import classNames from 'classnames/bind'
@@ -7,14 +7,14 @@ import { Button, Section, contentsAnimate } from '../../components/index'
 
 const cx = classNames.bind(styles)
 
-const Skills = forwardRef((props, ref) => {
+const Skills = () => {
     const [more, setMore] = useState(false)
 
     const toggleShowMore = () => {
         setMore(!more)
     }
     return (
-        <Section id="#skills" ref={ref} title="My Skills">
+        <Section id="#skills" title="My Skills">
             <motion.div variants={contentsAnimate} className={cx('contents')}>
                 <h3 className={cx('subtitle')}>Frontend Development</h3>
                 <motion.ul className={cx('item-wrapper')}>
@@ -72,6 +72,6 @@ const Skills = forwardRef((props, ref) => {
             </motion.div>
         </Section>
     )
-})
+}
 
 export default Skills

@@ -9,6 +9,7 @@
         color: var(--text-muted);
         margin-bottom: 0.6rem;
         a {
+            color: var(--text-secondary-color);
             font-weight: 600;
             &:hover {
                 color: var(--primary-color);
@@ -17,11 +18,3 @@
         }
     }
 }
-
-// .wrapper::before {
-//     content: '';
-//     padding-top: 5rem;
-//     display: block;
-//     text-align: center;
-//     border-top: var(--divider);
-// }

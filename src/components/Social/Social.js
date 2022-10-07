@@ -1,36 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import classNames from 'classnames/bind'
+import { socials } from '../../constants/index'
 
 import styles from './Social.module.scss'
-import {
-    FaGithub,
-    FaTwitter,
-    FaLinkedin,
-    FaLinkedinIn,
-    FaInstagram,
-} from 'react-icons/fa'
 
 const cx = classNames.bind(styles)
-
-export const socialIcon = [
-    {
-        icon: <FaLinkedinIn />,
-        link: '#link',
-    },
-    {
-        icon: <FaGithub />,
-        link: '#git',
-    },
-    {
-        icon: <FaTwitter />,
-        link: '#twitter',
-    },
-    {
-        icon: <FaInstagram />,
-        link: '#insta',
-    },
-]
 
 const container = {
     hidden: {
@@ -51,14 +26,19 @@ const Social = ({ vertical }) => {
             className={cx(vertical ? 'vertical' : 'horizontal')}
         >
             <ul className={cx('wrapper')}>
-                {socialIcon.map(({ icon, link }) => (
+                {socials.map(({ icon, link }) => (
                     <motion.li
                         whileHover={{ scale: 1.1, y: -5 }}
                         transition={{ duration: 0.2 }}
                         key={link}
                         className={cx('item')}
                     >
-                        <a href={link} className={cx('icon')}>
+                        <a
+                            href={link}
+                            target="_blank"
+                            rel="noreferrer"
+                            className={cx('icon')}
+                        >
                             {icon}
                         </a>
                     </motion.li>

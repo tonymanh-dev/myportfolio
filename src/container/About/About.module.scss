@@ -11,6 +11,9 @@
         p:first-child {
             margin-bottom: 1rem;
         }
+        .quote {
+            margin-top: 2rem;
+        }
     }
 
     .profile {
@@ -50,7 +53,7 @@
 
         .framer:hover::before {
             background: none;
-            animation: background ease-in-out 3s;
+            transition: all 0.5s linear;
         }
 
         .framer::after {
@@ -88,14 +91,14 @@
             height: 20rem;
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 786px) {
             width: 26rem;
             height: 26rem;
             margin: 5rem auto 0;
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 786px) {
         display: block;
     }
 }

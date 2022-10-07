@@ -1,16 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import classNames from 'classnames/bind'
-import { BsMoonStarsFill, BsFillSunFill } from 'react-icons/bs'
-import { HiOutlineVolumeUp, HiOutlineVolumeOff } from 'react-icons/hi'
-
-import NavMenu from './NavMenu'
-import { Button, Loading } from '../index'
-import { navLinks, images, music, logo } from '../../constants/index'
 import styles from './Navbar.module.scss'
+
+import { MdLightMode, MdOutlineNightlight } from 'react-icons/md'
+// import { HiOutlineVolumeUp, HiOutlineVolumeOff } from 'react-icons/hi'
+
+import Sidebar from './Sidebar'
+import { Button } from '../index'
+import { navLinks, music, logo, logo2 } from '../../constants/index'
 
 const cx = classNames.bind(styles)
 
+// Handle theme from local storage
 const getThemeFromStorage = () => {
     const getTheme = localStorage.getItem('theme')
     let theme = 'dark'
@@ -20,23 +22,24 @@ const getThemeFromStorage = () => {
     return theme
 }
 
-const Navbar = ({ aboutRef }) => {
+const Navbar = () => {
     const [theme, setTheme] = useState(getThemeFromStorage())
-    const [link, setLink] = useState('')
-    const [isMusic, setIsMusic] = useState(false)
-    const [scrollDown, setScrollDown] = useState('')
+    // const [isMusic, setIsMusic] = useState(false)
+    const [onScroll, setOnScroll] = useState('')
 
-    const musicRef = useRef(null)
+    // const musicRef = useRef(null)
 
+    // // Music handler
+    // const toggleMusic = () => {
+    //     const audio = musicRef.current
+    //     setIsMusic(!isMusic)
+
+    //     isMusic ? audio.pause() : audio.play()
+    // }
+
+    // Handle theme
     const toggleTheme = () => {
         setTheme(theme === 'dark' ? 'light' : 'dark')
-    }
-
-    const toggleMusic = () => {
-        const audio = musicRef.current
-        setIsMusic(!isMusic)
-
-        isMusic ? audio.pause() : audio.play()
     }
 
     useEffect(() => {
@@ -44,35 +47,41 @@ const Navbar = ({ aboutRef }) => {
         localStorage.setItem('theme', theme)
     }, [theme])
 
-    //   handle click to scroll
+    //   Handle click scroll to section
     const scrollTo = (el) => {
         const sectionId = document.getElementById(el)
         sectionId.scrollIntoView({ behavior: 'smooth' })
     }
 
-    // Handle hidden navbar when scroll down
+    // Handle hidden/show navbar when scroll down/up
     useEffect(() => {
         let lastScroll = 0
 
         window.addEventListener('scroll', () => {
             const curScroll = window.pageYOffset
 
-            if (curScroll > lastScroll && !scrollDown) {
-                setScrollDown('scroll-down')
+            if (curScroll > lastScroll && !onScroll) {
+                setOnScroll('scroll-down')
             }
 
             if (curScroll < lastScroll) {
-                setScrollDown('scroll-up')
+                setOnScroll('scroll-up')
             }
 
-            if (curScroll <= 0) setScrollDown('')
+            if (curScroll <= 0) setOnScroll('')
 
             lastScroll = curScroll
         })
-    }, [scrollDown])
+    }, [onScroll])
 
     return (
-        <nav className={cx(scrollDown)}>
+        <nav
+            className={cx(
+                onScroll,
+                'container',
+                onScroll === 'scroll-up' && 'bg-fill',
+            )}
+        >
             <motion.div
                 initial={{ opacity: 0, y: -100 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -80,7 +89,7 @@ const Navbar = ({ aboutRef }) => {
                     ease: 'easeInOut',
                     duration: 1.2,
                 }}
-                className={cx('nav')}
+                className={cx('wrapper')}
             >
                 <div
                     className={cx('logo')}
@@ -88,32 +97,19 @@ const Navbar = ({ aboutRef }) => {
                 >
                     {logo}
                 </div>
-                <div className={cx('nav-actions')}>
-                    <ul className={cx('nav-links')}>
+                <div className={cx('actions')}>
+                    <ul className={cx('links')}>
                         {navLinks.map((label) => (
                             <motion.li
                                 key={`link-${label}`}
-                                className={cx('nav-item')}
+                                className={cx('item')}
                                 onClick={() => {
-                                    setLink(label)
                                     scrollTo(`#${label.toLowerCase()}`)
                                 }}
                                 variants={label}
-                                // whileHover={{ scale: 1.1 }}
                                 whileTap={{ scale: 0.95 }}
                             >
                                 <a href={`#${label.toLowerCase()}`}>{label}</a>
-
-                                {/* {label === link && (
-                                    <motion.div
-                                        className={cx('underline')}
-                                        layoutId="underline"
-                                        transition={{
-                                            ease: 'easeInOut',
-                                            duration: 0.15,
-                                        }}
-                                    />
-                                )} */}
                             </motion.li>
                         ))}
                     </ul>
@@ -125,25 +121,27 @@ const Navbar = ({ aboutRef }) => {
                             <HiOutlineVolumeOff />
                         )}
                     </div> */}
-                    <div className={cx('dark__mode')} onClick={toggleTheme}>
+                    <div className={cx('dark-mode')} onClick={toggleTheme}>
                         {theme === 'dark' ? (
-                            <BsMoonStarsFill className={cx('moon')} />
+                            <MdLightMode className={cx('sun')} />
                         ) : (
-                            <BsFillSunFill className={cx('sun')} />
+                            <MdOutlineNightlight className={cx('moon')} />
                         )}
                     </div>
-                    <div className={cx('nav-btn')}>
-                        <Button title="Resume" outline onClick={() => {}} />
+                    <div className={cx('resume-btn')}>
+                        <Button
+                            title="Resume"
+                            outline
+                            href="mailto:manhtv.dev@gmail.com"
+                        />
                     </div>
                 </div>
 
                 {/* -----------Nav mobile---------- */}
 
-                <NavMenu
+                <Sidebar
                     toggleTheme={toggleTheme}
                     theme={theme}
-                    setLink={setLink}
-                    link={link}
                     scrollTo={scrollTo}
                 />
             </motion.div>

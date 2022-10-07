@@ -1,3 +1,5 @@
+import { FaGithub, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa'
+
 import images from './images'
 import intro from './music'
 
@@ -6,6 +8,47 @@ export { default as images } from './images'
 export const navLinks = ['About', 'Skills', 'Work', 'Contact']
 
 export const music = intro
+
+export const logo = (
+    <svg
+        width="44"
+        height="44"
+        viewBox="0 0 50 50"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            d="M33.2343 17.9V32H29.3143V24.22L26.6543 32H23.3743L20.6943 24.16V32H16.7743V17.9H21.5143L25.0543 27.06L28.5143 17.9H33.2343Z"
+            fill="currentColor"
+        />
+        <path
+            d="M26 1.73205L44.6506 12.5C45.2694 12.8573 45.6506 13.5175 45.6506 14.2321V35.768C45.6506 36.4825 45.2694 37.1427 44.6506 37.5L26 48.2679C25.3812 48.6252 24.6188 48.6252 24 48.2679L5.34936 37.5C4.73056 37.1427 4.34937 36.4825 4.34937 35.7679V14.232C4.34937 13.5175 4.73056 12.8573 5.34937 12.5L24 1.73205C24.6188 1.37478 25.3812 1.37479 26 1.73205Z"
+            stroke="currentColor"
+            strokeWidth="2"
+        />
+    </svg>
+)
+
+export const logo2 = (
+    <svg
+        width="50"
+        height="40"
+        viewBox="0 0 50 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            d="M18.9594 4.00656L31.6598 27.7643C31.8378 28.0973 31.5965 28.5 31.2188 28.5H5.818C5.44033 28.5 5.199 28.0973 5.37705 27.7643L18.0775 4.00656C18.2658 3.65419 18.771 3.65419 18.9594 4.00656Z"
+            stroke="currentColor"
+            strokeWidth="2"
+        />
+        <path
+            d="M31.9225 4.00656L44.6229 27.7643C44.801 28.0973 44.5597 28.5 44.182 28.5H18.7812C18.4035 28.5 18.1622 28.0973 18.3402 27.7643L31.0406 4.00656C31.229 3.65419 31.7342 3.65419 31.9225 4.00656Z"
+            stroke="currentColor"
+            strokeWidth="2"
+        />
+    </svg>
+)
 
 const {
     html,
@@ -21,14 +64,31 @@ const {
     tailwindcss,
     bootstrap,
     firebase,
-    about01,
-    about02,
 
-    project2,
-    project1,
-    project,
     project_light,
+    project1,
+    project2,
+    project3,
 } = images
+
+export const socials = [
+    {
+        icon: <FaLinkedinIn />,
+        link: 'https://www.linkedin.com/in/tonymanh/',
+    },
+    {
+        icon: <FaGithub />,
+        link: 'https://github.com/tonymanh-dev',
+    },
+    {
+        icon: <FaTwitter />,
+        link: 'https://twitter.com/manh_tvm',
+    },
+    {
+        icon: <FaInstagram />,
+        link: 'https://www.instagram.com/manh_eng/',
+    },
+]
 
 export const frontends = [
     { label: 'HTML 5', img: html },
@@ -52,64 +112,44 @@ export const others = [
 export const works = [
     {
         id: 1,
-        title: 'Pomodoro Technique With Music',
+
+        title: 'OpenSea - Home page UI clone',
         description:
-            'Customizable timer intervals to suit your preference Task list to manage your works Music background during Pomodoro section',
-        image: project1,
-        tech: ['React', 'Rexdux', 'Tailwindcss', 'Firebase'],
-        live: 'https://pomomusic.netlify.app/',
-        github: '#git',
+            'A clone of OpenSea, the largest NFT marketplace. Using React with real time fetching of collections from OpenSea and fully responsive',
+        image: project3,
+        tech: ['React', 'Tailwind CSS', 'OpenSea API'],
+        live: 'https://opensea-vn.netlify.app/',
+        github: 'https://github.com/tonymanh-dev/opensea-clone',
     },
     {
         id: 2,
-        title: 'Crypto Portfolio',
+        title: 'Pomodoro Technique With Music',
         description:
-            "You can able to buy or sell crypto. Showing profit/loss, check realtime coin's price, infomation and more...",
-        image: project_light,
-        tech: ['React', 'Rexdux', 'MUI 5', 'Coingeko API'],
-        live: 'https://crypto-man.netlify.app/',
-        github: '#git',
+            'If you need something to enhance your productivity, this app is for you. It helps you focus on any task you are working on, such as study, writing, or coding.  Based on Pomodoro Technique, you can keep focused by listening to soft music, checking your task list and customizing the timer, uploading your own music... ',
+        image: project1,
+        tech: ['React', 'Rexdux', 'Bootstrap 5', 'Firebase'],
+        live: 'https://pomomusic.netlify.app/',
+        github: 'https://github.com/tonymanh-dev/pomomusic',
     },
     {
         id: 3,
-
-        title: 'Front-end Portfolio Website',
+        title: 'Crypto Portfolio',
         description:
-            'Customizable timer intervals to suit your preference Task list to manage your works Music background during Pomodoro section',
-        image: project2,
-        tech: ['React', 'Rexdux', 'Tailwindcss', 'Firebase'],
-        live: 'https://tonymanh.netlify.app/',
-        github: '#git',
+            "An application helps you manage your portfolio in crypto investment. Dashboard showing overall about your portfolio like profit/loss, chart by dominance, performance, and you are also able to check real time coin's price, information, create transactions, delete and more...",
+        image: project_light,
+        tech: ['React', 'Rexdux', 'MUI 5', 'Coingeko API'],
+        live: 'https://crypto-man.netlify.app/',
+        github: 'https://github.com/tonymanh-dev/portfolio',
     },
     {
         id: 4,
 
-        title: 'Pomodoro Music',
+        title: 'Web Developer Portfolio Website',
         description:
-            'Customizable timer intervals to suit your preference Task list to manage your works Music background during Pomodoro section',
-        image: about01,
-        tech: ['React', 'Rexdux', 'Tailwindcss', 'Firebase'],
-        live: '#projectlink',
-        github: '#git',
+            'A personal front-end developer portfolio website to show some information about me and products I have built so far. I got inspired by @Brittany Chiang  . There are many nice animations backed by Framer Motion and fully responsive.',
+        image: project2,
+        tech: ['React', 'Framer Motion', 'SCSS', 'EmailJS'],
+        live: 'https://tonymanh.netlify.app/',
+        github: 'https://github.com/tonymanh-dev/myportfolio',
     },
 ]
-
-export const logo = (
-    <svg
-        width="40"
-        height="40"
-        role="image"
-        viewBox="0 0 100 100"
-        xmlns="http://www.w3.org/2000/svg"
-    >
-        <path
-            d="M51.75 3.89711L89.0513 25.433C90.1342 26.0582 90.8013 27.2137 90.8013 28.4641V71.5359C90.8013 72.7863 90.1342 73.9418 89.0513 74.567L51.75 96.1029C50.6671 96.7281 49.3329 96.7281 48.25 96.1029L10.9487 74.567C9.86583 73.9418 9.19873 72.7863 9.19873 71.5359V28.4641C9.19873 27.2137 9.86583 26.0582 10.9487 25.433L48.25 3.89711C49.3329 3.2719 50.6671 3.2719 51.75 3.89711Z"
-            stroke="currentColor"
-            strokeWidth="5"
-        />
-        <path
-            d="M36.556 64.396C35.3827 64.396 34.4733 64.0733 33.828 63.428C33.212 62.7827 32.904 61.8733 32.904 60.7V36.28C32.904 35.0773 33.2413 34.168 33.916 33.552C34.5907 32.9067 35.544 32.584 36.776 32.584C37.8027 32.584 38.6093 32.7893 39.196 33.2C39.812 33.5813 40.3693 34.2267 40.868 35.136L50.328 52.12H48.788L58.204 35.136C58.732 34.2267 59.2893 33.5813 59.876 33.2C60.492 32.7893 61.3133 32.584 62.34 32.584C63.5133 32.584 64.408 32.9067 65.024 33.552C65.6693 34.168 65.992 35.0773 65.992 36.28V60.7C65.992 61.8733 65.684 62.7827 65.068 63.428C64.452 64.0733 63.5427 64.396 62.34 64.396C61.1667 64.396 60.2573 64.0733 59.612 63.428C58.996 62.7827 58.688 61.8733 58.688 60.7V45.564H59.612L52.528 57.884C52.1173 58.5293 51.6773 59.0133 51.208 59.336C50.768 59.6587 50.1667 59.82 49.404 59.82C48.6707 59.82 48.0693 59.6587 47.6 59.336C47.1307 59.0133 46.7053 58.5293 46.324 57.884L39.196 45.52H40.208V60.7C40.208 61.8733 39.9 62.7827 39.284 63.428C38.668 64.0733 37.7587 64.396 36.556 64.396Z"
-            fill="currentColor"
-        />
-    </svg>
-)

@@ -1,21 +1,25 @@
 .app {
     max-width: 1300px;
+    margin: 0 auto;
 }
 .container {
+    display: block;
+    margin: 0 auto;
+    max-width: 1600px;
     padding: 0 14rem;
     counter-reset: section;
 
-    //lg
+    //large
     @media screen and (max-width: 900px) {
         padding: 0 10rem;
     }
 
-    //md
-    @media screen and (max-width: 768px) {
+    //medium
+    @media screen and (max-width: 786px) {
         padding: 0 6rem;
     }
 
-    // sm
+    // small
     @media screen and (max-width: 600px) {
         padding: 0 2.4rem;
     }

@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import classNames from 'classnames/bind'
 import styles from './Section.module.scss'
 
@@ -33,7 +33,7 @@ export const contentsAnimate = {
     },
 }
 
-const Section = forwardRef((props, ref) => {
+const Section = (props) => {
     return (
         <motion.section
             id={props.id}
@@ -42,7 +42,6 @@ const Section = forwardRef((props, ref) => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ staggerChildren: 0.5 }}
             className={cx('wrapper')}
-            ref={ref}
         >
             <div className={cx('heading')}>
                 <motion.h2
@@ -59,6 +58,6 @@ const Section = forwardRef((props, ref) => {
             {props.children}
         </motion.section>
     )
-})
+}
 
 export default Section

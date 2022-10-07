@@ -9,12 +9,13 @@ import { BsArrowRight } from 'react-icons/bs'
 
 const cx = classNames.bind(styles)
 
-const Contact = forwardRef((props, ref) => {
+const Contact = () => {
     const [submited, setSubmited] = useState(false)
     const [loading, setLoading] = useState(false)
 
     const form = useRef()
-
+    console.log(process.env.REACT_APP_KEY)
+    // Handle logic send form contact to email
     const sendEmail = (e) => {
         e.preventDefault()
         setLoading(true)
@@ -39,7 +40,7 @@ const Contact = forwardRef((props, ref) => {
     }
 
     return (
-        <Section ref={ref} id="#contact" title="Get in touch">
+        <Section id="#contact" title="Get in touch">
             <motion.div variants={contentsAnimate} className={cx('contents')}>
                 <div className={cx('contact')}>
                     <p>
@@ -69,8 +70,6 @@ const Contact = forwardRef((props, ref) => {
                                     required
                                     placeholder="Mr. Tony"
                                     name="name"
-                                    // value={formData.name}
-                                    // onChange={handleFormData}
                                 ></input>
                             </div>
 
@@ -83,8 +82,6 @@ const Contact = forwardRef((props, ref) => {
                                     className={cx('email')}
                                     placeholder="Manhtv.dev@gmail.com"
                                     name="email"
-                                    // value={formData.email}
-                                    // onChange={handleFormData}
                                 ></input>
                             </div>
                         </div>
@@ -101,8 +98,6 @@ const Contact = forwardRef((props, ref) => {
                                     placeholder="Hi, I'm looking forward to working with 
                                 you."
                                     name="message"
-                                    // value={formData.message}
-                                    // onChange={handleFormData}
                                     minLength="20"
                                 ></textarea>
                             </div>
@@ -129,6 +124,6 @@ const Contact = forwardRef((props, ref) => {
             </motion.div>
         </Section>
     )
-})
+}
 
 export default Contact

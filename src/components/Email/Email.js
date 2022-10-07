@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
 import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './Email.module.scss'
@@ -15,9 +14,9 @@ const Email = () => {
             <div className={cx('contents')}>
                 <motion.a
                     whileHover={{ y: -5 }}
-                    href="mailto:tonymanh.dev@gmail.com"
+                    href="mailto:manhtv.dev@gmail.com"
                 >
-                    tonymanh.dev@gmail.com
+                    manhtv.dev@gmail.com
                 </motion.a>
             </div>
         </motion.div>

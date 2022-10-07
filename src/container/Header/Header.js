@@ -1,8 +1,8 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import styles from './Header.module.scss'
 import classNames from 'classnames/bind'
-import { Button } from '../../components/index'
+import { Button, Decoration } from '../../components/index'
 
 const cx = classNames.bind(styles)
 
@@ -29,11 +29,13 @@ const item = {
     hidden: { opacity: 0, y: 30 },
 }
 
-const Header = forwardRef((props, ref) => {
+const Header = () => {
     return (
-        <section ref={ref} id="#home" className={cx('header__wrapper')}>
+        <section id="#home" className={cx('wrapper')}>
+            <div className={cx('bg-gradient')}></div>
+            <Decoration />
             <motion.div
-                className={cx('header__heading')}
+                className={cx('heading')}
                 initial="hidden"
                 animate="visible"
                 variants={list}
@@ -66,9 +68,9 @@ const Header = forwardRef((props, ref) => {
                     transition={{ duration: 0.5, delay: 0.8 }}
                 >
                     <p>
-                        I love creating interactive applications, building
-                        stunning interfaces and amazing experiences on the web.
-                        I'm currently looking for the first job as a front end
+                        I love building interactive applications, stunning
+                        interfaces and amazing experiences on the web. I'm
+                        currently looking for the first job as a front end
                         developer.
                     </p>
                 </motion.div>
@@ -77,11 +79,16 @@ const Header = forwardRef((props, ref) => {
                     variants={item}
                     transition={{ duration: 0.5, delay: 1 }}
                 >
-                    <Button large title="Hire me" outline />
+                    <Button
+                        href="mailto:manhtv.dev@gmail.com"
+                        large
+                        title="Hire me"
+                        outline
+                    />
                 </motion.div>
             </motion.div>
         </section>
     )
-})
+}
 
 export default Header

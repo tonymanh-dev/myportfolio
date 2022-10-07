@@ -39,13 +39,14 @@ const Button = ({
         small,
         large,
         text,
+        href,
     })
     return (
         <Comp className={classes} {...props} type={type}>
             <span className={cx('title')}>{title}</span>
             {loading && <span className={cx('loading')}>{loading}</span>}
 
-            {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
+            {rightIcon && <span className={cx('right-icon')}>{rightIcon}</span>}
         </Comp>
     )
 }
