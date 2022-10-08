@@ -24,8 +24,8 @@ const getThemeFromStorage = () => {
 
 const Navbar = () => {
     const [theme, setTheme] = useState(getThemeFromStorage())
-    // const [isMusic, setIsMusic] = useState(false)
     const [onScroll, setOnScroll] = useState('')
+    // const [isMusic, setIsMusic] = useState(false)
 
     // const musicRef = useRef(null)
 

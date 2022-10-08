@@ -11,7 +11,7 @@ const Decoration = () => {
 
         visible: {
             rotate: [0, 0, 180, 180, 0],
-            pathLength: 1.1,
+            pathLength: 1,
             opacity: 1,
             transition: {
                 pathLength: {
@@ -43,6 +43,8 @@ const Decoration = () => {
                     r="23"
                     stroke="currentColor"
                     strokeWidth="4"
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
                     variants={draw}
                 />
             </motion.svg>
@@ -67,6 +69,8 @@ const Decoration = () => {
                     stroke="currentColor"
                     strokeWidth="8"
                     mask="url(#path-1-inside-1_103_75)"
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
                     variants={draw}
                 />
             </motion.svg>
@@ -85,6 +89,8 @@ const Decoration = () => {
                     d="M16 2L29.8564 26L2.14359 26L16 2Z"
                     stroke="currentColor"
                     strokeWidth="4"
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
                     variants={draw}
                 />
             </motion.svg>
@@ -104,6 +110,8 @@ const Decoration = () => {
                     r="23"
                     stroke="currentColor"
                     strokeWidth="4"
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
                     variants={draw}
                 />
             </motion.svg>

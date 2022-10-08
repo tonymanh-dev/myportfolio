@@ -14,7 +14,7 @@ const Contact = () => {
     const [loading, setLoading] = useState(false)
 
     const form = useRef()
-    console.log(process.env.REACT_APP_KEY)
+
     // Handle logic send form contact to email
     const sendEmail = (e) => {
         e.preventDefault()
@@ -22,10 +22,10 @@ const Contact = () => {
 
         emailjs
             .sendForm(
-                'service_jdsj8rk',
-                'template_w58x857',
+                process.env.REACT_APP_SERVICE_ID,
+                process.env.REACT_APP_TEMPLATE_ID,
                 form.current,
-                '7XpBdaaOeWyxWymgB',
+                process.env.REACT_APP_PUBLIC_KEY,
             )
             .then(
                 () => {

@@ -139,7 +139,7 @@ export const works = [
         image: project_light,
         tech: ['React', 'Rexdux', 'MUI 5', 'Coingeko API'],
         live: 'https://crypto-man.netlify.app/',
-        github: 'https://github.com/tonymanh-dev/portfolio',
+        github: 'https://github.com/tonymanh-dev/cryptoman',
     },
     {
         id: 4,
