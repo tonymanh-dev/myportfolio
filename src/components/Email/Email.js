@@ -4,11 +4,24 @@ import styles from './Email.module.scss'
 import classNames from 'classnames/bind'
 
 const cx = classNames.bind(styles)
+
+const container = {
+    hidden: {
+        opacity: 0,
+    },
+    show: {
+        opacity: 1,
+        transition: { duration: 1, delay: 3 },
+    },
+}
+
 const Email = () => {
     return (
         <motion.div
             className={cx('wrapper')}
-            animate={{ opacity: [0, 1] }}
+            initial="hidden"
+            animate="show"
+            variants={container}
             transition={{ duration: 0.3, delay: 3 }}
         >
             <div className={cx('contents')}>
