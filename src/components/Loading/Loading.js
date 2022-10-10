@@ -14,7 +14,7 @@ const draw = {
         transition: {
             pathLength: {
                 delay: 0.3,
-                duration: 1.1,
+                duration: 1.3,
                 bounce: 0,
                 ease: 'linear',
             },
@@ -31,8 +31,8 @@ const contentAnimate = {
         opacity: 1,
         scale: 1,
         transition: {
-            delay: 1.6,
-            duration: 0.4,
+            delay: 1.8,
+            duration: 0.6,
             ease: 'easeInOut',
         },
     },

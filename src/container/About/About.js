@@ -13,11 +13,12 @@ const About = () => {
             <motion.div variants={contentsAnimate} className={cx('contents')}>
                 <div className={cx('info')}>
                     <p>
-                        I started coding in April 2021 and fell in love with it
-                        since. I enjoyed figuring out the logic behind building
-                        applications. But I was more attracted to how to make it
-                        look delightful to users. That's how I started my career
-                        in front end development.
+                        Hello, my name is Tony Manh, a self-taught front end
+                        developer based in Japan. I started coding in April 2021
+                        and fell in love with it since. I enjoyed figuring out
+                        the logic behind building applications, but I was more
+                        attracted to how to make it look delightful to users.
+                        That's how I started my career in front end development.
                     </p>
 
                     <p>
@@ -25,7 +26,7 @@ const About = () => {
                         and experimenting with the new knowledge that I have
                         gained every single day. Currently, I’m focused on
                         looking for a new role as a front end developer and
-                        finding out new technology by building projects.
+                        enhancing knowledge by building projects.
                     </p>
                 </div>
 

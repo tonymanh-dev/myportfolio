@@ -42,13 +42,7 @@
             z-index: 3;
             top: 0;
             left: 0;
-            background-color: rgba(13, 165, 233, 0.3);
-            // background: linear-gradient(
-            //     180deg,
-            //     rgba(10, 207, 254, 0.3) 0%,
-            //     rgba(73, 90, 255, 0.5) 100%
-            // );
-            // mix-blend-mode: screen;
+            background-color: var(--bg-image);
         }
 
         .framer:hover::before {

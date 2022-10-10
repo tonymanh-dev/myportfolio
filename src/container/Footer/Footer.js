@@ -16,7 +16,7 @@ const Footer = () => {
                 duration: 1,
                 delay: 0.3,
             }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             className={cx('wrapper')}
         >
             <Social horizontal />

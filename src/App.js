@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './App.module.scss'
 import classNames from 'classnames/bind'
 import { AnimatePresence } from 'framer-motion'
-import { Navbar, Social, Email, Loading } from './components/index'
+import { Navbar, Social, Email, Loading, Decoration } from './components/index'
 import { About, Footer, Header, Skills, Contact, Work } from './container/index'
 
 const cx = classNames.bind(styles)

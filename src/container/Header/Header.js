@@ -32,7 +32,6 @@ const item = {
 const Header = () => {
     return (
         <section id="#home" className={cx('wrapper')}>
-            <div className={cx('bg-gradient')}></div>
             <Decoration />
             <motion.div
                 className={cx('heading')}
@@ -60,7 +59,7 @@ const Header = () => {
                     variants={item}
                     transition={{ duration: 0.5, delay: 0.6 }}
                 >
-                    <h1>A front-end web developer.</h1>
+                    <h1>A front end web developer.</h1>
                 </motion.div>
                 <motion.div
                     className={cx('info')}
