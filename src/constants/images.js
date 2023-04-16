@@ -12,6 +12,7 @@ import typescript from '../assets/images/typescript.png'
 import firebase from '../assets/images/firebase.png'
 import bootstrap from '../assets/images/bootstrap.png'
 import tailwindcss from '../assets/images/tailwindcss.png'
+import nextjs from '../assets/images/nextjs.svg'
 
 // Profile
 import profile from '../assets/images/tony.JPG'
@@ -22,6 +23,7 @@ import project_light from '../assets/images/project_light.png'
 import project1 from '../assets/images/project1.png'
 import project2 from '../assets/images/project2.png'
 import project3 from '../assets/images/project3.png'
+import project4 from '../assets/images/project4.png'
 
 //
 
@@ -33,6 +35,7 @@ export default {
     project1,
     project,
     project_light,
+    project4,
 
     tailwindcss,
     bootstrap,
@@ -48,4 +51,5 @@ export default {
     redux,
     sass,
     typescript,
+    nextjs,
 }

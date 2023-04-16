@@ -64,11 +64,13 @@ const {
     tailwindcss,
     bootstrap,
     firebase,
+    nextjs,
 
     project_light,
     project1,
     project2,
     project3,
+    project4,
 } = images
 
 export const socials = [
@@ -96,11 +98,12 @@ export const frontends = [
     { label: 'SASS', img: sass },
     { label: 'TailwindCSS', img: tailwindcss },
     { label: 'Bootstrap 5', img: bootstrap },
-    { label: 'MUI 5', img: mu5 },
+    // { label: 'MUI 5', img: mu5 },
     { label: 'JavaScript ES6', img: javascript },
     { label: 'React 18', img: react },
     { label: 'Redux Toolkit', img: redux },
     { label: 'TypeScript', img: typescript },
+    { label: 'NextJS', img: nextjs },
 ]
 
 export const others = [
@@ -110,6 +113,17 @@ export const others = [
 ]
 
 export const works = [
+    {
+        // id: 1,
+
+        title: 'Vocala - A platform for languages learning',
+        description:
+            "As a language learner, I understand the difficulties of memorizing new words. That's why I created Vocala, my first product which is now available for purchase. I built this app based on my own experiences and the desire to make language learning easier for everyone.",
+        image: project4,
+        tech: ['Nextjs', 'TypeScript', 'Tailwind CSS', 'OpenAI API', 'Stripe'],
+        live: 'https://vocala.app/',
+        github: 'https://vocala.app/',
+    },
     {
         id: 1,
 
